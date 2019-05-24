@@ -33,7 +33,7 @@ test_ccsds-mc-impl:
 test_ccsds-com-impl:
   stage: regression-test
   script:
-    - ls -a
+    - ls -a .m2/repository/int/esa/nmf/core/helper-tools
     - cd core/mo-services-impl/ccsds-com-impl
     - "mvn test -Dmaven.test.failure.ignore=true"
   artifacts:
