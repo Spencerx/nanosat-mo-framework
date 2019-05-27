@@ -6,7 +6,7 @@ stages:
 image: maven:3.3.9-jdk-8
 
 variables:
-  NMF_HOME: /builds/nanosat-mo-framework/nanosat-mo-framework/
+  NMF_HOME: /builds/nanosat-mo-framework/nanosat-mo-framework
   MAVEN_OPTS: "-Dmaven.repo.local=$NMF_HOME/.m2/repository"
 
 cache:
@@ -26,7 +26,6 @@ build:
     - git checkout fix_structures
     - mvn install
     - cd ..
-    - ls .m2/repository/int/esa/ccsds/mo/API_COMMON/1.0-RC3
     - mvn install -DskipTests
 
 test_ccsds-mc-impl:
@@ -45,9 +44,6 @@ test_ccsds-mc-impl:
 test_ccsds-com-impl:
   stage: regression-test
   script:
-    - pwd
-    - cat .m2/repository/int/esa/nmf/core/moservices/api/com-nmf/2.0.0-SNAPSHOT/maven-metadata-local.xml
-    - cd core/mo-services-impl/ccsds-com-impl
     - "mvn test"
   artifacts:
     reports:
