@@ -44,6 +44,7 @@ test_ccsds-mc-impl:
 test_ccsds-com-impl:
   stage: regression-test
   script:
+    - cd core/mo-services-impl/ccsds-com-impl
     - "mvn test"
   artifacts:
     reports:
