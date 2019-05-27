@@ -11,6 +11,7 @@ variables:
 cache:
   paths:
     - .m2/repository
+  key: "$CI_BUILD_REF_NAME"
 
 build:
   stage: build
@@ -34,6 +35,7 @@ test_ccsds-com-impl:
   stage: regression-test
   script:
     - ls -R .m2/repository/
+    - cat .m2/repository/int/esa/nmf/core/moservices/api/com-nmf/2.0.0-SNAPSHOT/maven-metadata-local.xml
     - cd core/mo-services-impl/ccsds-com-impl
     - "mvn -X -e test -Dmaven.test.failure.ignore=true"
   artifacts:
