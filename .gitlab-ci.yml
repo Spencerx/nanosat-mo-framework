@@ -35,7 +35,7 @@ test_ccsds-com-impl:
   script:
     - ls -R .m2/repository/
     - cd core/mo-services-impl/ccsds-com-impl
-    - "mvn test -Dmaven.test.failure.ignore=true"
+    - "mvn -X -e test -Dmaven.test.failure.ignore=true"
   artifacts:
     reports:
       junit:
