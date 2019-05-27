@@ -26,6 +26,7 @@ build:
     - git checkout fix_structures
     - mvn install
     - cd ..
+    - ls .m2/repository/int/esa/ccsds/mo/API_COMMON/1.0-RC3
     - mvn install -DskipTests
 
 test_ccsds-mc-impl:
