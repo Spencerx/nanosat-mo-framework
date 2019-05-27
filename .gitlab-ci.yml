@@ -17,6 +17,15 @@ cache:
 build:
   stage: build
   script:
+    - git clone https://github.com/esa/CCSDS_MO_XML.git
+    - cd CCSDS_MO_XML
+    - mvn install
+    - cd ..
+    - git clone https://github.com/esa/CCSDS_MO_APIS.git
+    - cd CCSDS_MO_APIS
+    - git checkout fix_structures
+    - mvn install
+    - cd ..
     - mvn install -DskipTests
 
 test_ccsds-mc-impl:
