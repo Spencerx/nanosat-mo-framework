@@ -11,7 +11,7 @@ variables:
 cache:
   paths:
     - .m2/repository
-  key: "$CI_BUILD_REF_NAME"
+  key: ${CI_COMMIT_REF_SLUG}
 
 build:
   stage: build
