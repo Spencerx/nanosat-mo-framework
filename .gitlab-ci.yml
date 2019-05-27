@@ -23,7 +23,7 @@ test_ccsds-mc-impl:
   stage: regression-test
   script:
     - cd core/mo-services-impl/ccsds-mc-impl
-    - "mvn test -Dmaven.test.failure.ignore=true"
+    - "mvn test"
   artifacts:
     reports:
       junit:
@@ -38,7 +38,7 @@ test_ccsds-com-impl:
     - pwd
     - cat .m2/repository/int/esa/nmf/core/moservices/api/com-nmf/2.0.0-SNAPSHOT/maven-metadata-local.xml
     - cd core/mo-services-impl/ccsds-com-impl
-    - "mvn -X -e test -Dmaven.test.failure.ignore=true"
+    - "mvn test"
   artifacts:
     reports:
       junit:
@@ -64,7 +64,7 @@ test_ccsds-common-impl:
   stage: regression-test
   script:
     - cd core/mo-services-impl/ccsds-common-impl
-    - "mvn test -Dmaven.test.failure.ignore=true"
+    - "mvn test"
   artifacts:
     reports:
       junit:
@@ -77,7 +77,7 @@ test_nmf-software-management-impl:
   stage: regression-test
   script:
     - cd core/mo-services-impl/nmf-software-management-impl
-    - "mvn test -Dmaven.test.failure.ignore=true"
+    - "mvn test"
   artifacts:
     reports:
       junit:
@@ -90,7 +90,7 @@ test_com-nmf:
   stage: regression-test
   script:
     - cd core/mo-services-apis/com-nmf
-    - "mvn test -Dmaven.test.failure.ignore=true"
+    - "mvn test"
   artifacts:
     reports:
       junit:
@@ -103,7 +103,7 @@ test_generic-composite-model:
   stage: regression-test
   script:
     - cd core/nmf-composites/generic-composite-model
-    - "mvn test -Dmaven.test.failure.ignore=true"
+    - "mvn test"
   artifacts:
     reports:
       junit:
@@ -116,7 +116,7 @@ test_nanosat-mo-connector:
   stage: regression-test
   script:
     - cd core/nmf-composites/nanosat-mo-connector
-    - "mvn test -Dmaven.test.failure.ignore=true'"
+    - "mvn test"
   artifacts:
     reports:
       junit:
@@ -129,7 +129,7 @@ test_generic-ground-mo-proxy:
   stage: regression-test
   script:
     - cd core/nmf-composites/generic-ground-mo-proxy
-    - "mvn test -Dmaven.test.failure.ignore=true | grep 'Failures: 0, Errors: 0'"
+    - "mvn test"
   artifacts:
     reports:
       junit:
@@ -155,7 +155,7 @@ test_nanosat-mo-supervisor:
   stage: regression-test
   script:
     - cd mission/simulator/nanosat-mo-supervisor
-    - "mvn test -Dmaven.test.failure.ignore=true | grep 'Failures: 0, Errors: 0'"
+    - "mvn test"
   artifacts:
     reports:
       junit:
@@ -168,7 +168,7 @@ test_opssat-gps-simulator:
   stage: regression-test
   script:
     - cd mission/simulator/opssat-gps-simulator
-    - "mvn test -Dmaven.test.failure.ignore=true | grep 'Failures: 0, Errors: 0'"
+    - "mvn test"
   artifacts:
     reports:
       junit:
@@ -181,7 +181,7 @@ test_platform-services-impl:
   stage: regression-test
   script:
     - cd mission/simulator/platform-services-impl
-    - "mvn test -Dmaven.test.failure.ignore=true | grep 'Failures: 0, Errors: 0'"
+    - "mvn test"
   artifacts:
     reports:
       junit:
@@ -194,7 +194,7 @@ test_opssat-spacecraft-simulator:
   stage: regression-test
   script:
     - cd mission/simulator/opssat-spacecraft-simulator
-    - "mvn test -Dmaven.test.failure.ignore=true | grep 'Failures: 0, Errors: 0'"
+    - "mvn test"
   artifacts:
     reports:
       junit:
